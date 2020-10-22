@@ -3,9 +3,9 @@
 <beans  xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
-	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
   <bean id="oneToOneMessageBean" class="net.da.spring.onetoone.sample3.MessageBeanKr" />
-  <!--  
+  <!-- --> 
   <bean id="oneToTwoMessageBean" class="net.da.spring.onetotwo.sample1.MessageBeanImpl" >
     <constructor-arg>
       <value>Spring</value>
@@ -16,13 +16,13 @@
     </property>
 
     <property name="outputter">
-      <ref local="outputter">
+      <ref bean="outputter"/>
     </property>
   </bean>
-  <bean id="outputter" class="net.da.spring.onototwo.sample1.FileOutputter">
+  <bean id="outputter" class="net.da.spring.onetotwo.sample1.FileOutputter">
     <property name="filePath">
       <value>out.txt</value>
     </property>
   </bean>
-  -->
+  <!-- -->
 </beans>
