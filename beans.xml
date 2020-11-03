@@ -6,11 +6,13 @@
     http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
     <bean id="oneToOneMessageBean" class="net.da.spring.onetoone.sample3.MessageBeanKr" />
     <bean id="oneToTwoMessageBean" class="net.da.spring.onetotwo.sample1.MessageBeanImpl" >
-        <constructor-arg value="Spring"/>
-        <property name="greeting" value="Hello, "/>
-        <property name="outputter" ref="outputter"/>
+        <constructor-arg value="Spring" />
+        <property name="greeting" value="Good morning, "/>
+        <property name="outputter">
+			<ref bean="outputter" />
+		</property>
     </bean>
     <bean id="outputter" class="net.da.spring.onetotwo.sample1.FileOutputter">
-        <property name="filePath" value="out.txt"/>
+        <property name="filePath" value="out.txt" />
     </bean>
 </beans>
