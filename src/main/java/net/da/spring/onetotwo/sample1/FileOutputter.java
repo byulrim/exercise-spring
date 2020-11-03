@@ -9,7 +9,7 @@ public class FileOutputter implements Outputter {
 	public void output(String message) throws IOException {
 
 		FileWriter out = new FileWriter(filePath);
-		out.write(message);
+		out.write(message + "\n");
 		out.close();
 
 	}
